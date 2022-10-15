@@ -112,3 +112,30 @@ export const EyeComponent = styled.div`
 export const PassWrongIcon = styled.div`
   color: #fb5757;
 `;
+
+export const ButtonForm = styled.button`
+  width: 432px;
+  height: 43px;
+  border-radius: 6px;
+  margin-top: 5%;
+  font-family: "HindSiliguri-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #00ffff;
+  }
+
+  @media (max-width: 1367px) {
+    margin-top: 5%;
+    border-radius: 6px;
+    margin-right: 15px;
+    margin-bottom: -5px;
+    height: 40px;
+    font-size: 13px;
+  }
+`;

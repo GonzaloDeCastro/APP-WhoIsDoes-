@@ -5,6 +5,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import {
+  ButtonForm,
   ContainerPassword,
   EyeComponent,
   FormComponent,
@@ -57,6 +58,7 @@ export const Login = () => {
             pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
           })}
         />
+        <LabelForm>Password</LabelForm>
         <ContainerPassword>
           <InputPassword
             noEmptyPass={noEmptyPass && "#00ffff"}
@@ -87,6 +89,7 @@ export const Login = () => {
             </EyeComponent>
           </i>
         </ContainerPassword>
+        <ButtonForm type="submit">{"Log in"}</ButtonForm>
       </FormComponent>
     </AuthLayout>
   );
