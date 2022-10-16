@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AuthLayout from "./layout/AuthLayout";
+import AuthLayout from "../layout/AuthLayout";
 import { useForm } from "react-hook-form";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
@@ -13,9 +13,14 @@ import {
   InputPassword,
   LabelForm,
   PassWrongIcon,
-} from "./css/FormStyleComponents";
+} from "../css/FormStyleComponents";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../redux/slice/authSlice";
+import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -32,7 +37,7 @@ export const Login = () => {
 
   const onSubmit = (form) => {
     setLoading(true);
-
+    dispatch(userLogin(form, navigate));
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -94,3 +99,5 @@ export const Login = () => {
     </AuthLayout>
   );
 };
+
+export default Login;
