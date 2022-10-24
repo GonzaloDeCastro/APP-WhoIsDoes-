@@ -17,9 +17,35 @@ export const product = createSlice({
         list: action.payload,
       };
     },
+    removeProduct: (state, action) => {
+      return {
+        ...state,
+        list: state.list.filter((product) => product._id !== action.payload),
+      };
+    },
   },
 });
-export const { getProducts } = product.actions;
+export const { getProducts, removeProduct } = product.actions;
+
+export const deleteAsyncCreator = (productId) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:4000/api/products/${productId}`,
+        {
+          headers: {
+            "x-access-token": JSON.parse(localStorage.getItem("tokenGonza")),
+          },
+        }
+      );
+      console.log(response);
+      if (response.status === 202 || response.status === 200) {
+        const action = removeProduct(productId);
+        dispatch(action);
+      }
+    } catch (error) {}
+  };
+};
 
 export const getProductsAsyncCreator = () => {
   return async (dispatch) => {

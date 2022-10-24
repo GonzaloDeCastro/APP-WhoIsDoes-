@@ -3,6 +3,7 @@ import Login from "../auth/Login";
 import Register from "../auth/Register";
 import Menu from "../pages/menu/Menu";
 import Products from "../pages/products/Products";
+
 import RouteProtector from "./RouteProtector";
 
 export const routes = [

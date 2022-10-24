@@ -118,7 +118,6 @@ export const ButtonForm = styled.button`
   height: 43px;
   border-radius: 6px;
   margin-top: 5%;
-  font-family: "HindSiliguri-SemiBold";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -137,5 +136,15 @@ export const ButtonForm = styled.button`
     margin-bottom: -5px;
     height: 40px;
     font-size: 13px;
+  }
+`;
+
+export const ButtonIcon = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: #00ffff;
+    border-radius: 5px;
   }
 `;

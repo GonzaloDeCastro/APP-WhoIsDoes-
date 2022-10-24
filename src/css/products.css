@@ -1,0 +1,57 @@
+.Container {
+  margin-right: 5px;
+  background-color: #000;
+
+  height: 98vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerListCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(152, 16, 16);
+  width: 600px;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.ContainerCardTitle {
+  display: flex;
+  background-color: rgb(111, 150, 10);
+  width: 600px;
+  height: 40px;
+  font-size: 17px !important;
+  font-weight: 700;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ContainerCardFieldTitle {
+  background-color: rgb(92, 135, 205);
+  margin: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.ContainerCard {
+  display: flex;
+  background-color: rgb(206, 189, 189);
+  width: 600px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ContainerCardField {
+  background-color: rgb(121, 211, 135);
+  margin: 5px;
+  width: 150px;
+  text-align: center;
+}
