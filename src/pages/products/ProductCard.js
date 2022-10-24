@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "../../css/products.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { ButtonIcon } from "../../css/FormStyleComponents";

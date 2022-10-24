@@ -52,6 +52,11 @@ export const InputForm = styled.input`
     box-shadow: 0px 0px 2px ${(props) => props.noEmptyFocus};
     border: 1px solid ${(props) => props.noEmptyFocus};
   }
+  @media (max-width: 1367px) {
+    width: 315px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
 `;
 
 export const ContainerPassword = styled.div`

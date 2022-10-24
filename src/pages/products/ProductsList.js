@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard";
 const ProductsList = () => {
   const dispatch = useDispatch();
   const { list } = useSelector((state) => state.products);
-  console.log("productos ", list);
+
   useEffect(() => {
     dispatch(getProductsAsyncCreator());
   }, [dispatch]);

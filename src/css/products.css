@@ -55,3 +55,20 @@
   width: 150px;
   text-align: center;
 }
+
+.FormProduct {
+  background-color: rgb(121, 211, 135);
+  border-radius: 5px;
+  padding-top: 15px;
+}
+
+.LabelForm {
+  margin-left: 12%;
+  color: #000;
+}
+
+@media (max-width: 1367px) {
+  .FormProduct {
+    width: 432px;
+  }
+}

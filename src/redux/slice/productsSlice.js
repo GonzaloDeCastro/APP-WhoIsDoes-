@@ -23,9 +23,29 @@ export const product = createSlice({
         list: state.list.filter((product) => product._id !== action.payload),
       };
     },
+    creatorAddProduct: (state, action) => {
+      return {
+        ...state,
+        list: [action.payload, ...state.list],
+      };
+    },
   },
 });
-export const { getProducts, removeProduct } = product.actions;
+export const { getProducts, removeProduct, creatorAddProduct } =
+  product.actions;
+
+export const getProductsAsyncCreator = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(`http://localhost:4000/api/products`);
+
+      if (response.status === 200) {
+        const action = getProducts(response.data);
+        dispatch(action);
+      }
+    } catch (error) {}
+  };
+};
 
 export const deleteAsyncCreator = (productId) => {
   return async (dispatch) => {
@@ -38,7 +58,7 @@ export const deleteAsyncCreator = (productId) => {
           },
         }
       );
-      console.log(response);
+
       if (response.status === 202 || response.status === 200) {
         const action = removeProduct(productId);
         dispatch(action);
@@ -47,15 +67,23 @@ export const deleteAsyncCreator = (productId) => {
   };
 };
 
-export const getProductsAsyncCreator = () => {
+export const addAsyncCreator = (product) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/products`);
+      const response = await axios.post(
+        `http://localhost:4000/api/products`,
+        product,
+        {
+          headers: {
+            "x-access-token": JSON.parse(localStorage.getItem("tokenGonza")),
+          },
+        }
+      );
+      console.log(response);
+      if (response.status === 201) {
+        const action = creatorAddProduct(response.data);
 
-      if (response.status === 200) {
-        const action = getProducts(response.data);
         dispatch(action);
-        console.log(action);
       }
     } catch (error) {}
   };
